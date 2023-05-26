@@ -1,0 +1,27 @@
+<div class="navbar">
+    <%= link_to new_list_path do %>
+      <button>New list</button>
+    <% end %>
+    <%= link_to lists_path do %>
+    <button>My lists</button>
+    <% end %>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://www.nfsa.gov.au/sites/default/files/collection/hero_image09-2018/state_theatre_sydney_1956_348104_hero.jpg');"></div>
+</div>
+<div class="title-card">
+    <h1>My Lists</h1>
+        <%= link_to new_list_path do %>
+          <button>Add a new list</button>
+        <% end %>
+</div>
+
+
+<% @lists.each do |list| %>
+    <div class="card">
+      <%= list.name %><%= link_to "See this list", list_path(list.id) %>
+      <br>
+      <% end %>
+    </div>
+
+
+<%= link_to "Create a new list", new_list_path %>
